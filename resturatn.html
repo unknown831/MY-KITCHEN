@@ -1,0 +1,1337 @@
+
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+btoa(t.text)}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />		<link href="https://fonts.googleapis.com/css?family=Open+Sans%3A%2C400%2C700%2C900%7CZCOOL+XiaoWei%3A%2C400%2C700%2C900" rel="stylesheet">
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- Search Engine Optimization by Rank Math PRO - https://rankmath.com/ -->
+<title>10 BEST Restaurants in Lahore for Family</title>
+<meta name="description" content="Families choose to eat out more often in Lahore, a city of culinary enthusiasts. In fact, families are organizing more outside gatherings these days and"/>
+<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
+<link rel="canonical" href="https://elmomento.pk/best-restaurants-in-lahore-for-family/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="10 BEST Restaurants in Lahore for Family" />
+<meta property="og:description" content="Families choose to eat out more often in Lahore, a city of culinary enthusiasts. In fact, families are organizing more outside gatherings these days and" />
+<meta property="og:url" content="https://elmomento.pk/best-restaurants-in-lahore-for-family/" />
+<meta property="og:site_name" content="El Momento" />
+<meta property="article:publisher" content="https://www.facebook.com/Elmomento.pk" />
+<meta property="article:author" content="https://www.facebook.com/nabeeha.arshad.00" />
+<meta property="article:section" content="Lahore Food Scene" />
+<meta property="og:updated_time" content="2023-10-05T05:18:48+00:00" />
+<meta property="og:image" content="https://elmomento.pk/wp-content/uploads/2023/09/family-restaurant-lahore.jpg" />
+<meta property="og:image:secure_url" content="https://elmomento.pk/wp-content/uploads/2023/09/family-restaurant-lahore.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="628" />
+<meta property="og:image:alt" content="Best Family Restaurants in Lahore" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="10 BEST Restaurants in Lahore for Family" />
+<meta name="twitter:description" content="Families choose to eat out more often in Lahore, a city of culinary enthusiasts. In fact, families are organizing more outside gatherings these days and" />
+<meta name="twitter:site" content="@Elmomentopk" />
+<meta name="twitter:creator" content="@NabihaArshad1" />
+<meta name="twitter:image" content="https://elmomento.pk/wp-content/uploads/2023/09/family-restaurant-lahore.jpg" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Nabiha Arshad" />
+<meta name="twitter:label2" content="Time to read" />
+<meta name="twitter:data2" content="7 minutes" />
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="El Momento &raquo; Feed" href="https://elmomento.pk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="El Momento &raquo; Comments Feed" href="https://elmomento.pk/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.1.1 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+		<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+					<!-- No tracking code set -->
+				<!-- / Google Analytics by MonsterInsights -->
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/elmomento.pk\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<link data-minify="1" rel='stylesheet' id='sbr_styles-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/reviews-feed/assets/css/sbr-styles.css?ver=1727267407' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='bdt-uikit-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/bdthemes-prime-slider-lite/assets/css/bdt-uikit.css?ver=1727267407' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='prime-slider-site-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/bdthemes-prime-slider-lite/assets/css/prime-slider-site.css?ver=1727267407' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='premium-addons-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-css/premium-addons.min.css?ver=1727267407' type='text/css' media='all' />
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://elmomento.pk/wp-includes/css/dist/block-library/style.min.css?ver=6.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wpc-block-style-css-css' href='https://elmomento.pk/wp-content/plugins/wp-cafe/core/modules/guten-block/dist/blocks.style.build.css' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='dashicons-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-includes/css/dashicons.min.css?ver=1727267407' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='htmega-block-common-style-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/htmega-blocks/src/assets/css/common-style.css?ver=1727267407' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='slick-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/assets/css/slick.min.css?ver=1727267407' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='htmega-block-fontawesome-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/admin/assets/extensions/ht-menu/css/font-awesome.min.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='htmega-block-style-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/htmega-blocks/build/style-blocks-htmega.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='nta-css-popup-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-whatsapp/assets/dist/css/style.css?ver=1727267408' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='grw-public-main-css-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/widget-google-reviews/assets/css/public-main.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='htbbootstrap-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/assets/css/htbbootstrap.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/font-awesome.min.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='htmega-animation-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/assets/css/animation.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='htmega-keyframes-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/assets/css/htmega-keyframes.css?ver=1727267408' type='text/css' media='all' />
+<link rel='stylesheet' id='flatpicker-css' href='https://elmomento.pk/wp-content/plugins/wp-cafe/assets/css/flatpickr.min.css?ver=2.2.26' type='text/css' media='all' />
+<link rel='stylesheet' id='jquery-timepicker-css' href='https://elmomento.pk/wp-content/plugins/wp-cafe/assets/css/jquery.timepicker.min.css?ver=2.2.26' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wpc-icon-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-cafe/assets/css/wpc-icon.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wpc-public-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-cafe/assets/css/wpc-public.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1727267408' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://elmomento.pk/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.21.8' type='text/css' media='all' />
+<style id='elementor-frontend-inline-css' type='text/css'>
+.elementor-10730 .elementor-element.elementor-element-01af3b6:not(.elementor-motion-effects-element-type-background), .elementor-10730 .elementor-element.elementor-element-01af3b6 > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-image:url("https://elmomento.pk/wp-content/uploads/2023/09/family-restaurant-lahore.jpg");}
+</style>
+<link data-minify="1" rel='stylesheet' id='swiper-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=1727267408' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-4002-css' href='https://elmomento.pk/wp-content/uploads/elementor/css/post-4002.css?ver=1717394821' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-pro-css' href='https://elmomento.pk/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.7.7' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css' href='https://elmomento.pk/wp-content/uploads/elementor/css/global.css?ver=1717394826' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-17345-css' href='https://elmomento.pk/wp-content/uploads/elementor/css/post-17345.css?ver=1727365650' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-4004-css' href='https://elmomento.pk/wp-content/uploads/elementor/css/post-4004.css?ver=1720079400' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-8520-css' href='https://elmomento.pk/wp-content/uploads/elementor/css/post-8520.css?ver=1725903665' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-10730-css' href='https://elmomento.pk/wp-content/uploads/elementor/css/post-10730.css?ver=1717394825' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-ekiticons-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/modules/elementskit-icon-pack/assets/css/ekiticons.css?ver=1727267408' type='text/css' media='all' />
+<link rel='stylesheet' id='deliciko-fonts-css' href='https://fonts.googleapis.com/css?family=Cookie%3A300%2C300i%2C400%2C400i%2C500%2C600%2C700%7COpen+Sans%3A400%2C500%2C700%7CZCOOL+XiaoWei%3A+400&#038;ver=2.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bootstrap-css' href='https://elmomento.pk/wp-content/themes/deliciko/assets/css/bootstrap.min.css?ver=2.0.2' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='iconfont-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/themes/deliciko/assets/css/iconfont.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='magnific-popup-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/assets/css/magnific-popup.css?ver=1727267408' type='text/css' media='all' />
+<link rel='stylesheet' id='owl-carousel-css' href='https://elmomento.pk/wp-content/themes/deliciko/assets/css/owl.carousel.min.css?ver=2.0.2' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='deliciko-woocommerce-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/themes/deliciko/assets/css/woocommerce.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='deliciko-gutenberg-custom-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/themes/deliciko/assets/css/gutenberg-custom.css?ver=1727267408' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='deliciko-style-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/themes/deliciko/assets/css/master.css?ver=1727267408' type='text/css' media='all' />
+<style id='deliciko-style-inline-css' type='text/css'>
+
+        body{ font-family:"Open Sans";font-style:normal;font-weight:400; }
+
+        h1,h2{
+            font-family:"ZCOOL XiaoWei";font-style:normal;font-weight:400;
+        }
+        h3{ 
+            font-family:"ZCOOL XiaoWei";font-style:normal;font-weight:400; 
+        }
+
+        h4{ 
+            font-family:"ZCOOL XiaoWei";font-style:normal;font-weight:400;
+        }
+        .banner-area .banner-title{
+            font-family:"ZCOOL XiaoWei";font-style:normal;font-weight:400;
+        }
+       
+      
+
+        a, .post-meta span i, .entry-header .entry-title a:hover, .sidebar ul li a:hover{
+            color: #bc906b;
+        }
+
+        .entry-header .entry-title a{
+            color: #1c1c24;
+        }
+     
+        body{
+            background-color: #fff;
+        }
+      
+     
+        .single-intro-text .count-number, .sticky.post .meta-featured-post,
+        .sidebar .widget .widget-title:before, .pagination li.active a, .pagination li:hover a,
+        .pagination li.active a:hover, .pagination li:hover a:hover,
+        .sidebar .widget.widget_search .input-group-btn, .tag-lists a:hover, .tagcloud a:hover,
+        .BackTo, .ticket-btn.btn:hover,
+        .btn-primary,
+        .BackTo,
+        .woocommerce ul.products li.product .button,.woocommerce ul.products li.product .added_to_cart,
+        .woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,
+        .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.sponsor-web-link a:hover i, .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+        .woocommerce span.onsale,
+        .woocommerce ul.products li.product .added_to_cart:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover,.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+        .header-book-btn .btn-primary,
+        .feature-tab-slider .owl-nav .owl-prev,
+        .feature-tab-slider .owl-nav .owl-next,
+        .elementor-widget-container .ot-dtp-picker .ot-dtp-picker-button,
+        .ts-team-standard .ts-team-info:hover .team-content,
+        .navbar-light .navbar-toggler{
+            background: #bc906b;
+        }
+
+        .btn-primary,
+        .owl-carousel .owl-dots .owl-dot.active{
+            border-color: #bc906b;
+        }
+
+
+
+        .copyright .footer-social li a i:hover,
+        .copyright .copyright-text a,
+        .header .navbar-container .navbar-light .main-menu li a:hover,
+        .header .navbar-container .navbar-light .main-menu li.active > a,
+        .post .entry-header .entry-title a:hover,
+        a:hover,
+        .woocommerce ul.products li.product .price, 
+        .woocommerce ul.products li.product .woocommerce-loop-product__title:hover{
+            color: #bc906b;
+        }
+       
+        
+         .header-book-btn .btn-primary{
+            background: #bc906b;
+            border-color: #bc906b;
+        }
+         
+         .header-book-btn .btn-primary{
+            color: #fff;
+        }
+         
+
+        .ts-footer{
+            background-color: #000000;
+            padding-top:50px;
+        }
+        
+        
+
+      .copyright .copyright-text{
+         color: #fff;
+      }
+
+     
+</style>
+<link rel='stylesheet' id='parent-style-css' href='https://elmomento.pk/wp-content/themes/deliciko-child/style.css?ver=6.6.2' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='ekit-widget-styles-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/widget-styles.css?ver=1727267409' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='ekit-responsive-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/css/responsive.css?ver=1727267409' type='text/css' media='all' />
+<link rel='stylesheet' id='eael-general-css' href='https://elmomento.pk/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/css/view/general.min.css?ver=5.9.23' type='text/css' media='all' />
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://elmomento.pk/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Poppins%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CNunito+Sans%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CAbel%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.6.2' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://elmomento.pk/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=1727267409' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-brands-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/brands.min.css?ver=1727267409' type='text/css' media='all' />
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" defer="defer" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/widget-google-reviews/assets/js/public-main.js?ver=1727267409" id="grw-public-main-js-js"></script>
+<link rel="https://api.w.org/" href="https://elmomento.pk/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://elmomento.pk/wp-json/wp/v2/posts/15544" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://elmomento.pk/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.6.2" />
+<link rel='shortlink' href='https://elmomento.pk/?p=15544' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://elmomento.pk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Felmomento.pk%2Fbest-restaurants-in-lahore-for-family%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://elmomento.pk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Felmomento.pk%2Fbest-restaurants-in-lahore-for-family%2F&#038;format=xml" />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to footer -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">
+	var dataLayer_content = {"pagePostType":"post","pagePostType2":"single-post","pageCategory":["lahore-food-scene","restaurant"],"pagePostAuthor":"Nabiha Arshad"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W36ZSS74');
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->		<script type="rocketlazyloadscript">
+			( function() {
+				window.onpageshow = function( event ) {
+					// Defined window.wpforms means that a form exists on a page.
+					// If so and back/forward button has been clicked,
+					// force reload a page to prevent the submit button state stuck.
+					if ( typeof window.wpforms !== 'undefined' && event.persisted ) {
+						window.location.reload();
+					}
+				};
+			}() );
+		</script>
+			<!-- Google Tag Manager -->
+	<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-P3MZ3QQ');</script>
+	<!-- End Google Tag Manager -->
+
+	<!-- Google tag (gtag.js) -->
+	<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=AW-11091072320"></script>
+	<script type="rocketlazyloadscript">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'AW-11091072320');
+	</script>
+
+    <!-- Meta Pixel Code -->
+<script type="rocketlazyloadscript">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '978075083458107');
+fbq('track', 'PageView');
+</script>
+<noscript><img loading="lazy" height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=978075083458107&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+	<!-- Google tag (gtag.js) -->
+	<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=UA-252841650-1"></script>
+	<script type="rocketlazyloadscript">
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-252841650-1');
+	</script>
+    <meta name="p:domain_verify" content="5958dcd4c2c84d34392aad3700e6bb58"/>
+    <meta name="generator" content="Elementor 3.21.8; features: e_optimized_assets_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+			<meta name="theme-color" content="#000000">
+					<style type="text/css" id="wp-custom-css">
+			.elementor-41 .elementor-element.elementor-element-3ba71747 .elementor-button[type="submit"]{
+	
+	margin-left:70px;
+	margin-right:70px
+}
+.pswp{
+	display:none;
+}
+
+/** Start Block Kit CSS: 136-3-fc37602abad173a9d9d95d89bbe6bb80 **/
+
+.envato-block__preview{overflow: visible !important;}
+
+/** End Block Kit CSS: 136-3-fc37602abad173a9d9d95d89bbe6bb80 **/
+
+
+
+/** Start Block Kit CSS: 144-3-3a7d335f39a8579c20cdf02f8d462582 **/
+
+.envato-block__preview{overflow: visible;}
+
+/* Envato Kit 141 Custom Styles - Applied to the element under Advanced */
+
+.elementor-headline-animation-type-drop-in .elementor-headline-dynamic-wrapper{
+	text-align: center;
+}
+.envato-kit-141-top-0 h1,
+.envato-kit-141-top-0 h2,
+.envato-kit-141-top-0 h3,
+.envato-kit-141-top-0 h4,
+.envato-kit-141-top-0 h5,
+.envato-kit-141-top-0 h6,
+.envato-kit-141-top-0 p {
+	margin-top: 0;
+}
+
+.elementor-14853 .elementor-element.elementor-element-2228e80 img {
+	width:100% !important;
+	
+}
+
+.elementor-10739 .elementor-element.elementor-element-b1fc058 img {
+	
+	width:100% !important;
+	
+}
+
+
+.envato-kit-141-newsletter-inline .elementor-field-textual.elementor-size-md {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.envato-kit-141-bottom-0 p {
+	margin-bottom: 0;
+}
+
+.envato-kit-141-bottom-8 .elementor-price-list .elementor-price-list-item .elementor-price-list-header {
+	margin-bottom: .5rem;
+}
+
+.envato-kit-141.elementor-widget-testimonial-carousel.elementor-pagination-type-bullets .swiper-container {
+	padding-bottom: 52px;
+}
+
+.envato-kit-141-display-inline {
+	display: inline-block;
+}
+
+.envato-kit-141 .elementor-slick-slider ul.slick-dots {
+	bottom: -40px;
+}
+
+/** End Block Kit CSS: 144-3-3a7d335f39a8579c20cdf02f8d462582 **/
+
+/* area.banner-title{
+	color:black;
+	font-size:74px;
+	
+}
+.banner-area .banner-title{
+	color:black;
+} */
+
+
+.wp-gr.wpac a.wp-google-name {
+    color: #bebebe !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+}
+.has-black-background-color {
+    background-color: #00000000 !important;
+}
+.menu-block .inner-box .info h3 {
+    position: relative;
+    color: #c18d3e !important;
+    font-size: 16px;
+    font-weight: 600;
+    padding-right: 10px;
+    letter-spacing: 1px;
+    background-color: #ffffff;
+    -webkit-margin-after: 0;
+    margin-block-end: 0;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body class="post-template-default single single-post postid-15544 single-format-standard sidebar-active elementor-default elementor-template-full-width elementor-kit-4002 elementor-page-10730">
+
+		<div data-elementor-type="header" data-elementor-id="4004" class="elementor elementor-4004 elementor-location-header">
+					<div class="elementor-section-wrap">
+								<header class="elementor-section elementor-top-section elementor-element elementor-element-6449e33a0 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6449e33a0" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_effects_offset&quot;:200,&quot;sticky_effects_offset_mobile&quot;:100,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-83d7097 elementor-hidden-tablet elementor-hidden-mobile" data-id="83d7097" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-7eb8875 elementor-tablet-align-right elementor-mobile-align-center elementor-align-center clicktoshow elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="7eb8875" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-phone-alt"></i>						</span>
+										<span class="elementor-icon-list-text">Call Us</span>
+									</li>
+						</ul>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-5764fc1 elementor-absolute showclick elementor-widget elementor-widget-premium-icon-list" data-id="5764fc1" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;rbadges_repeater&quot;:[]}" data-widget_type="premium-icon-list.default">
+				<div class="elementor-widget-container">
+						<ul class="premium-bullet-list-box">
+		
+			<li class="premium-bullet-list-content elementor-repeater-item-16c54db premium-bullet-list-content-grow-cc">
+				<div class="premium-bullet-list-text">
+								<div class="premium-bullet-list-wrapper">
+					<img width="69" height="74" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2069%2074'%3E%3C/svg%3E" alt="Lahore Minar e Pakistan" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/05/Vector-1.png"><noscript><img width="69" height="74" src="https://elmomento.pk/wp-content/uploads/2023/05/Vector-1.png" alt="Lahore Minar e Pakistan"></noscript>				</div>
+				
+				<span   data-text="0311 1100315"> 0311 1100315 </span>
+				</div>
+
+				
+									<a class="premium-bullet-list-link" aria-label="0311 1100315" href="tel:0311100315">
+						<span>0311 1100315</span>
+					</a>
+				
+			</li>
+
+				
+			<li class="premium-bullet-list-content elementor-repeater-item-38fdb0f premium-bullet-list-content-grow-cc">
+				<div class="premium-bullet-list-text">
+								<div class="premium-bullet-list-wrapper">
+					<img width="86" height="70" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2086%2070'%3E%3C/svg%3E" alt="Faisal Mosque" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/05/Vector.png"><noscript><img width="86" height="70" src="https://elmomento.pk/wp-content/uploads/2023/05/Vector.png" alt="Faisal Mosque"></noscript>				</div>
+				
+				<span   data-text="0311 1100317"> 0311 1100317 </span>
+				</div>
+
+				
+									<a class="premium-bullet-list-link" aria-label="0311 1100317" href="tel:0311100317">
+						<span>0311 1100317</span>
+					</a>
+				
+			</li>
+
+						</ul>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-accc726 elementor-widget elementor-widget-html" data-id="accc726" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<script type="rocketlazyloadscript">
+document.addEventListener('DOMContentLoaded', function() {
+jQuery(function($){
+$('.clicktoshow').each(function(i){
+$(this).click(function(event){ 
+event.preventDefault();
+$('.showclick').eq(i).toggle();
+// $('.clicktoshow').eq(i).hide();
+}); });
+}); });
+</script>
+<style>
+.clicktoshow{
+cursor: pointer;
+}
+.showclick{
+display: none;
+}
+</style>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-54630b18" data-id="54630b18" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-b1fec1f elementor-widget elementor-widget-ekit-nav-menu" data-id="b1fec1f" data-element_type="widget" data-widget_type="ekit-nav-menu.default">
+				<div class="elementor-widget-container">
+			<div class="ekit-wid-con ekit_menu_responsive_tablet" data-hamburger-icon="icon icon-menu-11" data-hamburger-icon-type="icon" data-responsive-breakpoint="1024">            <button class="elementskit-menu-hamburger elementskit-menu-toggler"  type="button" aria-label="hamburger-icon">
+                <i aria-hidden="true" class="ekit-menu-icon icon icon-menu-11"></i>            </button>
+            <div id="ekit-megamenu-primary-menu" class="elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default ekit-nav-menu-one-page-no ekit-nav-dropdown-hover"><ul id="menu-primary-menu" class="elementskit-navbar-nav elementskit-menu-po-right submenu-click-on-icon"><li id="menu-item-13767" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-13767 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/" class="ekit-menu-nav-link">Home</a></li>
+<li id="menu-item-13731" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13731 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu=750px><a href="#" class="ekit-menu-nav-link ekit-menu-dropdown-toggle">Branches<i aria-hidden="true" class="icon icon-none elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-13732" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13732 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/el-momento-lahore/" class=" dropdown-item">El Momento Lahore</a>	<li id="menu-item-13734" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13734 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/el-momento-islamabad/" class=" dropdown-item">El Momento Islamabad</a></ul>
+</li>
+<li id="menu-item-14608" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-14608 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/elmomento-menu/" class="ekit-menu-nav-link ekit-menu-dropdown-toggle">Menu<i aria-hidden="true" class="icon icon-none elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-13736" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13736 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/menu-lahore/" class=" dropdown-item">Menu Lahore</a>	<li id="menu-item-13733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13733 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/menu-islamabad/" class=" dropdown-item">Menu Islamabad</a></ul>
+</li>
+<li id="menu-item-14965" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14965 nav-item elementskit-dropdown-has relative_position elementskit-dropdown-menu-default_width elementskit-mobile-builder-content" data-vertical-menu=750px><a href="#" class="ekit-menu-nav-link ekit-menu-dropdown-toggle">Deals<i aria-hidden="true" class="icon icon-none elementskit-submenu-indicator"></i></a>
+<ul class="elementskit-dropdown elementskit-submenu-panel">
+	<li id="menu-item-14966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14966 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/islamabad-deals/" class=" dropdown-item">Islamabad Deals</a>	<li id="menu-item-14967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14967 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/lahore-deals/" class=" dropdown-item">Lahore Deals</a></ul>
+</li>
+<li id="menu-item-60" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-60 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/gallery/" class="ekit-menu-nav-link">Gallery</a></li>
+<li id="menu-item-59" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-59 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/contact-us/" class="ekit-menu-nav-link">Contact Us</a></li>
+<li id="menu-item-10729" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10729 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/blog/" class="ekit-menu-nav-link">Blog</a></li>
+<li id="menu-item-6758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6758 nav-item elementskit-mobile-builder-content" data-vertical-menu=750px><a href="https://elmomento.pk/about-us/" class="ekit-menu-nav-link">About Us</a></li>
+</ul><div class="elementskit-nav-identity-panel">
+				<div class="elementskit-site-title">
+					<a class="elementskit-nav-logo" href="https://elmomento.pk" target="_self" rel="">
+						<img width="512" height="512" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20512%20512'%3E%3C/svg%3E" class="attachment-full size-full" alt="" decoding="async" data-lazy-srcset="https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1.png 512w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-300x300.png 300w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-150x150.png 150w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-270x270.png 270w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-192x192.png 192w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-180x180.png 180w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-32x32.png 32w" data-lazy-sizes="(max-width: 512px) 100vw, 512px" data-lazy-src="https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1.png" /><noscript><img loading="lazy" width="512" height="512" src="https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1.png" class="attachment-full size-full" alt="" decoding="async" srcset="https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1.png 512w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-300x300.png 300w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-150x150.png 150w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-270x270.png 270w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-192x192.png 192w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-180x180.png 180w, https://elmomento.pk/wp-content/uploads/2022/11/cropped-512x5120-1-32x32.png 32w" sizes="(max-width: 512px) 100vw, 512px" /></noscript>
+					</a> 
+				</div><button class="elementskit-menu-close elementskit-menu-toggler" type="button">X</button></div></div>			
+			<div class="elementskit-menu-overlay elementskit-menu-offcanvas-elements elementskit-menu-toggler ekit-nav-menu--overlay"></div></div>		</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-2a4f6165" data-id="2a4f6165" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-cbc8c81 logo elementor-widget elementor-widget-image" data-id="cbc8c81" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+														<a href="https://elmomento.pk/">
+							<img width="577" height="157" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20577%20157'%3E%3C/svg%3E" class="attachment-full size-full wp-image-8508" alt="El Momento Logo" data-lazy-src="https://elmomento.pk/wp-content/uploads/2022/11/Logo.png" /><noscript><img loading="lazy" width="577" height="157" src="https://elmomento.pk/wp-content/uploads/2022/11/Logo.png" class="attachment-full size-full wp-image-8508" alt="El Momento Logo" /></noscript>								</a>
+													</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</header>
+				<header class="elementor-section elementor-top-section elementor-element elementor-element-ca63883 elementor-section-content-middle elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="ca63883" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-37ea95b" data-id="37ea95b" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-f451c32 elementor-widget elementor-widget-premium-icon-list" data-id="f451c32" data-element_type="widget" data-settings="{&quot;rbadges_repeater&quot;:[]}" data-widget_type="premium-icon-list.default">
+				<div class="elementor-widget-container">
+						<ul class="premium-bullet-list-box">
+		
+			<li class="premium-bullet-list-content elementor-repeater-item-16c54db premium-bullet-list-content-inline">
+				<div class="premium-bullet-list-text">
+								<div class="premium-bullet-list-wrapper">
+					<img width="69" height="74" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2069%2074'%3E%3C/svg%3E" alt="Lahore Minar e Pakistan" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/05/Vector-1.png"><noscript><img width="69" height="74" src="https://elmomento.pk/wp-content/uploads/2023/05/Vector-1.png" alt="Lahore Minar e Pakistan"></noscript>				</div>
+				
+				<span   data-text="0311 1100315"> 0311 1100315 </span>
+				</div>
+
+				
+									<a class="premium-bullet-list-link" aria-label="0311 1100315" href="tel:03111100315">
+						<span>0311 1100315</span>
+					</a>
+				
+			</li>
+
+				
+			<li class="premium-bullet-list-content elementor-repeater-item-38fdb0f premium-bullet-list-content-inline">
+				<div class="premium-bullet-list-text">
+								<div class="premium-bullet-list-wrapper">
+					<img width="86" height="70" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2086%2070'%3E%3C/svg%3E" alt="Faisal Mosque" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/05/Vector.png"><noscript><img width="86" height="70" src="https://elmomento.pk/wp-content/uploads/2023/05/Vector.png" alt="Faisal Mosque"></noscript>				</div>
+				
+				<span   data-text="0311 1100317"> 0311 1100317 </span>
+				</div>
+
+				
+									<a class="premium-bullet-list-link" aria-label="0311 1100317" href="tel:03111100317">
+						<span>0311 1100317</span>
+					</a>
+				
+			</li>
+
+						</ul>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</header>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-33b6b1f elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="33b6b1f" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7b1b9ed" data-id="7b1b9ed" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-26c9d2d elementor-absolute elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-html" data-id="26c9d2d" data-element_type="widget" data-settings="{&quot;_position&quot;:&quot;absolute&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_offset_mobile&quot;:100,&quot;sticky_effects_offset_mobile&quot;:0,&quot;sticky_parent&quot;:&quot;yes&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			 <marquee style="color:white; padding:0; margin :0;line-height:1em;">
+    Enjoy the thrill of the World Cup with our Delectable Platters.
+    </marquee>		</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+							</div>
+				</div>
+				<div data-elementor-type="single-post" data-elementor-id="10730" class="elementor elementor-10730 elementor-location-single post-15544 post type-post status-publish format-standard has-post-thumbnail hentry category-lahore-food-scene category-restaurant">
+					<div class="elementor-section-wrap">
+								<section class="elementor-section elementor-top-section elementor-element elementor-element-01af3b6 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="01af3b6" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_bottom&quot;:&quot;mountains&quot;}">
+							<div class="elementor-background-overlay"></div>
+						<div class="elementor-shape elementor-shape-bottom" data-negative="false">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+	<path class="elementor-shape-fill" opacity="0.33" d="M473,67.3c-203.9,88.3-263.1-34-320.3,0C66,119.1,0,59.7,0,59.7V0h1000v59.7 c0,0-62.1,26.1-94.9,29.3c-32.8,3.3-62.8-12.3-75.8-22.1C806,49.6,745.3,8.7,694.9,4.7S492.4,59,473,67.3z"/>
+	<path class="elementor-shape-fill" opacity="0.66" d="M734,67.3c-45.5,0-77.2-23.2-129.1-39.1c-28.6-8.7-150.3-10.1-254,39.1 s-91.7-34.4-149.2,0C115.7,118.3,0,39.8,0,39.8V0h1000v36.5c0,0-28.2-18.5-92.1-18.5C810.2,18.1,775.7,67.3,734,67.3z"/>
+	<path class="elementor-shape-fill" d="M766.1,28.9c-200-57.5-266,65.5-395.1,19.5C242,1.8,242,5.4,184.8,20.6C128,35.8,132.3,44.9,89.9,52.5C28.6,63.7,0,0,0,0 h1000c0,0-9.9,40.9-83.6,48.1S829.6,47,766.1,28.9z"/>
+</svg>		</div>
+					<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bc0f6ed" data-id="bc0f6ed" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-2646a4a elementor-widget elementor-widget-theme-post-title elementor-page-title elementor-widget-heading" data-id="2646a4a" data-element_type="widget" data-widget_type="theme-post-title.default">
+				<div class="elementor-widget-container">
+			<h1 class="elementor-heading-title elementor-size-default">10 Best Restaurants in Lahore for Family</h1>		</div>
+				</div>
+				<div class="elementor-element elementor-element-f552bf7 elementor-align-center elementor-mobile-align-center elementor-widget elementor-widget-post-info" data-id="f552bf7" data-element_type="widget" data-widget_type="post-info.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-inline-items elementor-icon-list-items elementor-post-info">
+								<li class="elementor-icon-list-item elementor-repeater-item-10797dd elementor-inline-item" itemprop="author">
+						<a href="https://elmomento.pk/author/nabiha-arshad/">
+											<span class="elementor-icon-list-icon">
+								<i aria-hidden="true" class="far fa-user-circle"></i>							</span>
+									<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-author">
+										Nabiha Arshad					</span>
+									</a>
+				</li>
+				<li class="elementor-icon-list-item elementor-repeater-item-6f1efd8 elementor-inline-item" itemprop="about">
+										<span class="elementor-icon-list-icon">
+								<i aria-hidden="true" class="fas fa-tags"></i>							</span>
+									<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-terms">
+										<span class="elementor-post-info__terms-list">
+				<a href="https://elmomento.pk/category/lahore-food-scene/" class="elementor-post-info__terms-list-item">Lahore Food Scene</a>, <a href="https://elmomento.pk/category/restaurant/" class="elementor-post-info__terms-list-item">Restaurant</a>				</span>
+					</span>
+								</li>
+				<li class="elementor-icon-list-item elementor-repeater-item-86788d2 elementor-inline-item" itemprop="datePublished">
+						<a href="https://elmomento.pk/2023/09/27/">
+											<span class="elementor-icon-list-icon">
+								<i aria-hidden="true" class="fas fa-calendar"></i>							</span>
+									<span class="elementor-icon-list-text elementor-post-info__item elementor-post-info__item--type-date">
+										September 27, 2023					</span>
+									</a>
+				</li>
+				</ul>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-3fde40f elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="3fde40f" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-8ecf053" data-id="8ecf053" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-9eae0c4 elementor-post-navigation-borders-yes elementor-widget elementor-widget-post-navigation" data-id="9eae0c4" data-element_type="widget" data-widget_type="post-navigation.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-post-navigation">
+			<div class="elementor-post-navigation__prev elementor-post-navigation__link">
+				<a href="https://elmomento.pk/candlelight-dinner-in-islamabad/" rel="prev"><span class="post-navigation__arrow-wrapper post-navigation__arrow-prev"><i class="fa fa-angle-left" aria-hidden="true"></i><span class="elementor-screen-only">Prev</span></span><span class="elementor-post-navigation__link__prev"><span class="post-navigation__prev--label">Previous</span><span class="post-navigation__prev--title">Candle Light Dinner in Islamabad</span></span></a>			</div>
+							<div class="elementor-post-navigation__separator-wrapper">
+					<div class="elementor-post-navigation__separator"></div>
+				</div>
+						<div class="elementor-post-navigation__next elementor-post-navigation__link">
+				<a href="https://elmomento.pk/best-restaurants-in-islamabad-for-family/" rel="next"><span class="elementor-post-navigation__link__next"><span class="post-navigation__next--label">Next</span><span class="post-navigation__next--title">10 Best Restaurants in Islamabad for Family</span></span><span class="post-navigation__arrow-wrapper post-navigation__arrow-next"><i class="fa fa-angle-right" aria-hidden="true"></i><span class="elementor-screen-only">Next</span></span></a>			</div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-bda1735 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="bda1735" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h4 class="elementor-heading-title elementor-size-medium">Share :</h4>		</div>
+				</div>
+				<div class="elementor-element elementor-element-f76ff45 elementor-widget__width-auto elementor-widget elementor-widget-elementskit-social-share" data-id="f76ff45" data-element_type="widget" data-widget_type="elementskit-social-share.default">
+				<div class="elementor-widget-container">
+			<div class="ekit-wid-con" >		<ul class="ekit_socialshare">
+                            <li class="elementor-repeater-item-c5c9412" data-social="facebook">
+                    <div class="facebook">
+                        
+                        <i aria-hidden="true" class="icon icon-facebook"></i>                        
+                                                                                            </div>
+                </li>
+                                            <li class="elementor-repeater-item-12a1fc4" data-social="twitter">
+                    <div class="twitter">
+                        
+                        <i aria-hidden="true" class="icon icon-twitter"></i>                        
+                                                                                            </div>
+                </li>
+                                            <li class="elementor-repeater-item-17e9998" data-social="linkedin">
+                    <div class="linkedin">
+                        
+                        <i aria-hidden="true" class="icon icon-linkedin"></i>                        
+                                                                                            </div>
+                </li>
+                                            <li class="elementor-repeater-item-b05a136" data-social="whatsapp">
+                    <div class="whatsapp">
+                        
+                        <i aria-hidden="true" class="icon icon-whatsapp-1"></i>                        
+                                                                                            </div>
+                </li>
+                                    </ul>
+        </div>		</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-a067290 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="a067290" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-028c244" data-id="028c244" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-137fae2 blog-content elementor-widget elementor-widget-theme-post-content" data-id="137fae2" data-element_type="widget" data-widget_type="theme-post-content.default">
+				<div class="elementor-widget-container">
+			
+<p>Families choose to eat out more often in Lahore, a city of culinary enthusiasts. In fact, families are organizing more outside gatherings these days and frequently hosting their extended family &amp; friends over outdoor branches or dinners rather than the old traditional approach because this gives them a better experience and more free time to relax and converse. </p>
+
+
+
+<p>So it&#8217;s important to choose a family restaurant that offers a wide variety of good and hygienic food in a setting that is both tranquil and attractive—finding the <strong><em>best family restaurants in Lahore</em></strong> with a healthy &amp; delicious menu used to be difficult. <br><br>But as restaurants proliferate, it&#8217;s not too difficult now that many restaurants in Lahore offer you a family-friendly environment, an extensive menu with exceptional taste, and the best customer service to ensure that you and your family have a nice dine-out &amp; a memorable one in all aspects.&nbsp;</p>
+
+
+
+<h2 class="wp-block-heading"><strong><span style="text-decoration: underline;">10 Best Restaurants in Lahore for Family</span></strong></h2>
+
+
+
+<p>This blog will help you choose the best family restaurants in Lahore. The list below holds&nbsp;10 Best restaurants in Lahore for families.</p>
+
+
+
+<ol class="wp-block-list">
+<li>El Momento Lahore</li>
+
+
+
+<li>Monal Lahore</li>
+
+
+
+<li>Veera 5</li>
+
+
+
+<li>Cafe Aylanto&nbsp;</li>
+
+
+
+<li>Haveli Restaurant</li>
+
+
+
+<li>Cooco’s Den&nbsp;</li>
+
+
+
+<li>Spice Bazaar</li>
+
+
+
+<li>Salt&#8217;n Pepper Restaurant</li>
+
+
+
+<li>Andaaz Restaurant</li>
+
+
+
+<li>Tuscany Courtyard Lahore</li>
+</ol>
+
+
+
+<h3 class="wp-block-heading"><strong>1. El Momento Lahore</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img fetchpriority="high" fetchpriority="high" decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Cozy ambiance of El Momento Steakhouse" class="wp-image-13329" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/06/Cozy-Ambiance2.jpg"/><noscript><img fetchpriority="high" fetchpriority="high" decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/06/Cozy-Ambiance2.jpg" alt="Cozy ambiance of El Momento Steakhouse" class="wp-image-13329" width="600" height="400"/></noscript></figure></div>
+
+
+<p><strong>El Momento restaurant</strong> in Lahore is a fine dining restaurant. The restaurant has a very chic ambiance, giving you a sense of privacy and comfort, and therefore, <strong>El Momento is the restaurant in Lahore for family gatherings</strong>. <br><br>The staff is very professional and makes sure you have a good family time accompanied by delicious food. The <strong><span style="text-decoration: underline;"><a href="https://elmomento.pk/menu-lahore/">menu</a></span></strong> is extensive and offers everything from succulent steaks to seafood, appetizers, drinks, desserts, and hamburgers. <br><br>You may also savor their platters, which include Italian, Chinese, Japanese, and Korean dishes that are truly culinary marvels. Your family will be thanking you for choosing this restaurant to enjoy your family time fully.</p>
+
+
+
+<p>Visit: <strong><span style="text-decoration: underline;"><a href="https://elmomento.pk/el-momento-lahore/">Best Steakhouse in Lahore</a></span></strong>&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading"><strong>2. Monal&nbsp;</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Monal Lahore" class="wp-image-15547" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/IMG_20221212_172201.jpg"/><noscript><img decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/IMG_20221212_172201.jpg" alt="Monal Lahore" class="wp-image-15547" width="600" height="400"/></noscript></figure></div>
+
+
+<p>Monal Lahore is a popular grill restaurant located on the rooftop. The restaurant has a spacious space to cater to large family gatherings, especially if you prefer to savor the scrumptious food with a stunning city view from the rooftop. <br><br>Their customer service is also excellent, and they can easily manage the influx of customers as the place is always busy because of its popularity and sustaining the standard. It would be wise to make a reservation during the busy hours of the day. </p>
+
+
+
+<p>The restaurant specializes in desi &amp; continental cuisine, including a selection of BBQ, karahies, pastas, seafood, and more.&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading"><strong>3. Veera 5</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Veera 5" class="wp-image-15548" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/2023-03-05.jpg"/><noscript><img decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/2023-03-05.jpg" alt="Veera 5" class="wp-image-15548" width="600" height="400"/></noscript></figure></div>
+
+
+<p><strong><a href="https://www.instagram.com/veera_5/" target="_blank" rel="noreferrer noopener nofollow">Veera 5</a></strong> is a Chinese &amp; Thai restaurant. The restaurant has a very family-friendly, safe environment for families who want to spend quality time with their loved ones where they can enjoy delicious food. Especially for families who love Chinese &amp; Thai cuisine, it is indeed the best family restaurant in Lahore for them. <br><br>The restaurant&#8217;s popular servings are tom yum soup, tom kha gai, pad thai, thai green/red curry, and garlic pepper prawns. Known for its refined cuisine and tranquil setting, Veers 5 was awarded the Traveler&#8217;s Choice award by TripAdvisor in 2022.</p>
+
+
+
+<h3 class="wp-block-heading"><strong>4. Cafe Aylanto&nbsp;</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Cafe Aylanto MM Alam Road Restaurant" class="wp-image-15461" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/cafe-aylanto-lahore.jpg"/><noscript><img loading="lazy" loading="lazy" decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/cafe-aylanto-lahore.jpg" alt="Cafe Aylanto MM Alam Road Restaurant" class="wp-image-15461" width="600" height="400"/></noscript></figure></div>
+
+
+<p>Cafe Aylanto has earned enormous customer trust over the years and is one of the best options in Lahore for family get-togethers. <br><br>They are featuring a curated selection of classic dishes from the Mediterranean and Italian regions, as well as other iconic Western cuisines. The restaurant&#8217;s most popular dishes include Moroccan Chicken, Chicken Jalapeno, Club Sandwiches, Aylanto Special Pizza, Penne Arrabiata with Grilled Chicken, and Minted Lamb Chops, just to name a few.&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading"><strong>5. Haveli Restaurant</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Haveli Restaurant lahore" class="wp-image-15552" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/unnamed.png"/><noscript><img loading="lazy" loading="lazy" decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/unnamed.png" alt="Haveli Restaurant lahore" class="wp-image-15552" width="600" height="400"/></noscript></figure></div>
+
+
+<p>Located in the ancient Haveli Khalil Khan, the Haveli Restaurant is a well-known family restaurant in Lahore. It is encircled by magnificent heritage monuments, including the Badshahi mosque, Lahore fort, Temple of Guru Arjun, and Minar-e-Pakistan. The Haveli&#8217;s historic design is enhanced by the breathtaking views from its rooftop terraces. <br><br>Based on their dedication to offering the freshest ingredients and the most hygienically prepared dishes, the culinary experience delivers delectable local and regional variation. Each dish on the menu is a meticulous labor of love, and the restaurant needs to catch up on quality. It adheres to its core value of offering the most incredible levels of culinary arts quality and service while ensuring the ultimate guest happiness. <br><br>The restaurant furthermore offers family platters from its standard menu, specifically for families to fully experience their variety in traditional food at its finest. These platters include the BBQ Platter, Namak Mandi Platter, Vegetarian Platter, and Haveli Special Platter. This <strong>family restaurant in Lahore</strong> is a treasure trove for families who may really enjoy their time together while exploring a little about the city&#8217;s history a bit at this family-friendly restaurant in Lahore.&nbsp;&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading"><strong>6. Cooco’s Den&nbsp;</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Cooco’s Den Lahore" class="wp-image-15553" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/2022-03-31-2.jpg"/><noscript><img loading="lazy" loading="lazy" decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/2022-03-31-2.jpg" alt="Cooco’s Den Lahore" class="wp-image-15553" width="600" height="400"/></noscript></figure></div>
+
+
+<p>Within the enigmatic Walled City of Lahore lies a historic antique haveli called Cooco&#8217;s Den. Every haveli there, including the Cooco&#8217;s Den, can be considered a museum because of the various artifacts that are treasures for locals and visitors. <br><br>To have a truly memorable dining experience, take your family to Coco Den that they will remember forever. It will undoubtedly be an unforgettable experience with delicious cuisine. You can go on a brief sightseeing trip. <br><br>The well-known restaurant &#8220;Coco&#8217;s Den,&#8221; opened in 1996, is situated on Fort Road Food Street, adjacent to the great Lahore Fort and the world-famous Badshahi Mosque. It is also close to Roshnai Gate. The most incredible food in town is served in the mesmerizing ambiance of this museum-like restaurant, Coco&#8217;s Den, which offers rare options for traditional Pakistani and old Lahore cuisines.&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading"><strong>7. Spice Bazaar&nbsp;</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="spice bazaar lahore" class="wp-image-15554" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/2023-02-26.jpg"/><noscript><img loading="lazy" loading="lazy" decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/2023-02-26.jpg" alt="spice bazaar lahore" class="wp-image-15554" width="600" height="400"/></noscript></figure></div>
+
+
+<p>Spice Bazaar in Lahore honors Pakistani cuisine in a welcoming atmosphere, excellent customer service, and highly coveted, diverse, high-quality Pakistani food. <br><br>In all of its expanding flavors, Spice Bazaar showcases Pakistan&#8217;s rich culture and tradition in food. Moreover, Sunday Brunch, Lunch, Super Tea, and Dinner are available for families at Spice Bazaar to cherish their family gatherings fully. <br><br>The restaurant&#8217;s ambiance is conducive to having a pleasant, leisurely family supper. From its appetizers to the main course, everything will amaze you with taste. Considering all this, Spice Bazaar is indeed one of the <strong>best family restaurants in Lahore.</strong></p>
+
+
+
+<h3 class="wp-block-heading"><strong>8. Salt&#8217;n Pepper Restaurant</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Salt n Pepper Village Lahore" class="wp-image-15457" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/saltn-pepper-villag.jpg"/><noscript><img loading="lazy" loading="lazy" decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/saltn-pepper-villag.jpg" alt="Salt n Pepper Village Lahore" class="wp-image-15457" width="600" height="400"/></noscript></figure></div>
+
+
+<p>Salt N Pepper is a Pakistani fine dining restaurant. The Salt N Pepper Restaurant, which is located in Liberty Market Lahore, is regarded as Pakistan&#8217;s first authentic family-style restaurant in Lahore.&nbsp; <br><br>For many generations, the restaurant has had a warm, sentimental bond with its customers. Throughout Pakistan, many similar eateries have since been established, inspired by this restaurant that has remained loyal to its customers for three generations. <br><br>In addition to serving both traditional and continental cuisine, Salt N Pepper is well known for its Sandwiches, a range of Chicken and meat dishes, Burgers, Manchorian, Fish chili Dry, BBQ, Chicken Handi, and other feasts. Salt N Pepper is one of the best family restaurants in Lahore.&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading"><strong>9. Andaaz Restaurant</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="andaaz restaurant lahore" class="wp-image-15555" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/DSC_0116-1.jpg"/><noscript><img loading="lazy" loading="lazy" decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/DSC_0116-1.jpg" alt="andaaz restaurant lahore" class="wp-image-15555" width="600" height="400"/></noscript></figure></div>
+
+
+<p>Andaaz is an iconic Pakistani restaurant located in the historic walled city of Lahore. A friendly, welcoming restaurant for families with a nostalgic atmosphere. The restaurant atmosphere and exceptional taste make it a top priority for families to have a great dining experience and enjoy family chit-chat over food. <br><br>At the core of everything at Andaaz are hearty meals from all across the subcontinent, enthusiastic people, and real hospitality. It delivers its dinners a genuine regional cuisine reminiscent of bygone heydays when every meal was a feast, and every feast was a delicacy for foodies. Everything the restaurant offers, including the daal Makhni, Kaju Chicken, aromatic biryani, and grilled kebabs, is flawless in both flavor and presentation. <br><br>There is no doubt that this restaurant is one of the best choices for <strong>family dining out in Lahore</strong>, as it offers world-class cuisine, top-notch service, and an ambiance that exudes sophistication.&nbsp;</p>
+
+
+
+<h3 class="wp-block-heading"><strong>10. Tuscany Courtyard Lahore</strong></h3>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20400'%3E%3C/svg%3E" alt="Tuscany Courtyard Gulberg Lahore" class="wp-image-15459" width="600" height="400" data-lazy-src="https://elmomento.pk/wp-content/uploads/2023/09/tuscany-courtyard-lahore.jpg"/><noscript><img loading="lazy" loading="lazy" decoding="async" src="https://elmomento.pk/wp-content/uploads/2023/09/tuscany-courtyard-lahore.jpg" alt="Tuscany Courtyard Gulberg Lahore" class="wp-image-15459" width="600" height="400"/></noscript></figure></div>
+
+
+<p>Tuscany Courtyard in Lahore specializes in Italian, Mediterranean, and Thai delicacies. The atmosphere at the restaurant is quite elegant. <br><br>The cuisine is fantastic to enjoy with friends and family. Some of its famous food includes distinct Pastas, Tuscany Club Sandwiches, Steak, and Pizza. Additionally, the menu is rather vast, allowing you to choose from a range of dishes because every member of the family has distinct food preferences. You can add this restaurant to your bucket for your next family dine-out in Lahore.&nbsp;</p>
+
+
+
+<div style="height:40px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="has-black-color has-pale-cyan-blue-background-color has-text-color has-background"><em>After reading this blog, you will sure be able to find the <strong>best family restaurant in Lahore</strong></em>.<em> All these restaurants have their own specialty in food and ambiance that make them unique and customers&#8217; first choice. Besides the uniqueness, a few things are certain in all these </em><strong><em>10 best family restaurants in Lahore:</em></strong><em> their exceptional taste, family-friendly atmosphere &amp; efficient customer service.</em></p>
+
+
+
+<p>Explore: <strong><span style="text-decoration: underline;"><a href="https://elmomento.pk/best-instagrammable-restaurants-in-lahore/" target="_blank" rel="noreferrer noopener">Instagrammable Places in Lahore</a></span></strong></p>
+		</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+							</div>
+				</div>
+				<div data-elementor-type="footer" data-elementor-id="8520" class="elementor elementor-8520 elementor-location-footer">
+					<div class="elementor-section-wrap">
+								<section class="elementor-section elementor-top-section elementor-element elementor-element-fe29812 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="fe29812" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-wider">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-b66484d" data-id="b66484d" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6a72a44 elementor-widget elementor-widget-image" data-id="6a72a44" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+														<a href="https://elmomento.pk/">
+							<img width="2048" height="546" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202048%20546'%3E%3C/svg%3E" class="attachment-full size-full wp-image-4875" alt="El Momento Logo Transparent" data-lazy-srcset="https://elmomento.pk/wp-content/uploads/2022/12/elmomento-logo.png 2048w, https://elmomento.pk/wp-content/uploads/2022/12/elmomento-logo-1536x409.png 1536w, https://elmomento.pk/wp-content/uploads/2022/12/elmomento-logo-800x213.png 800w" data-lazy-sizes="(max-width: 2048px) 100vw, 2048px" data-lazy-src="https://elmomento.pk/wp-content/uploads/2022/12/elmomento-logo.png" /><noscript><img loading="lazy" width="2048" height="546" src="https://elmomento.pk/wp-content/uploads/2022/12/elmomento-logo.png" class="attachment-full size-full wp-image-4875" alt="El Momento Logo Transparent" srcset="https://elmomento.pk/wp-content/uploads/2022/12/elmomento-logo.png 2048w, https://elmomento.pk/wp-content/uploads/2022/12/elmomento-logo-1536x409.png 1536w, https://elmomento.pk/wp-content/uploads/2022/12/elmomento-logo-800x213.png 800w" sizes="(max-width: 2048px) 100vw, 2048px" /></noscript>								</a>
+													</div>
+				</div>
+				<div class="elementor-element elementor-element-141cb57 elementor-widget elementor-widget-text-editor" data-id="141cb57" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							El Momento Steakhouse is the premier destination for steak lovers based in Lahore &amp; Islamabad. Its sleek ambiance offers an ever-momentous dining experience. Savor the mouthwatering aroma filling the air while enjoying the finest cuts of meat at El Momento.						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-fc0064f" data-id="fc0064f" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-f5868bc elementor-widget elementor-widget-heading" data-id="f5868bc" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h4 class="elementor-heading-title elementor-size-default">Lahore</h4>		</div>
+				</div>
+				<div class="elementor-element elementor-element-34f32e7 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="34f32e7" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-0f34b99 elementor-mobile-align-center elementor-align-left elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="0f34b99" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://goo.gl/maps/EKKz87kJerUN4FYQ8">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-map-marker-alt"></i>						</span>
+										<span class="elementor-icon-list-text">Ground Floor, Building 43-L2, Mini Market,<br>MM Alam Rd,<span style="white-space:nowrap"> Block L Gulberg 2, Lahore.</span></span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="tel:031111100315">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-phone-alt"></i>						</span>
+										<span class="elementor-icon-list-text">0311 1100315</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="mailto:info@elmomento.pk">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-at"></i>						</span>
+										<span class="elementor-icon-list-text">info@elmomento.pk</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-3cdae19 elementor-widget elementor-widget-heading" data-id="3cdae19" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<span class="elementor-heading-title elementor-size-default">Monday - Thursday</span>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4ed3811 elementor-widget elementor-widget-heading" data-id="4ed3811" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<span class="elementor-heading-title elementor-size-default">12:00 pm - 12:00 am</span>		</div>
+				</div>
+				<div class="elementor-element elementor-element-0efe090 elementor-widget elementor-widget-heading" data-id="0efe090" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<span class="elementor-heading-title elementor-size-default">Friday - Sunday</span>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6570dc7 elementor-widget elementor-widget-heading" data-id="6570dc7" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<span class="elementor-heading-title elementor-size-default">12:00 pm - 01:00 am</span>		</div>
+				</div>
+				<div class="elementor-element elementor-element-5ddd37f elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="5ddd37f" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-70da443 elementor-shape-circle e-grid-align-left e-grid-align-mobile-center elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="70da443" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-social-icons-wrapper elementor-grid">
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-125b40d" href="https://www.facebook.com/Elmomento.pk" target="_blank" title="Facebook">
+						<span class="elementor-screen-only">Facebook</span>
+						<i class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-tiktok elementor-repeater-item-a0b4403" href="https://www.tiktok.com/@elmomento.pk?_t=8YWRu9bzuYT&#038;_r=1" target="_blank" title="Tiktok">
+						<span class="elementor-screen-only">Tiktok</span>
+						<i class="fab fa-tiktok"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-26237b2" href="https://www.youtube.com/channel/UCoKC-5snZQxxvjKNjTiOJXg" target="_blank" title="Youtube">
+						<span class="elementor-screen-only">Youtube</span>
+						<i class="fab fa-youtube"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-e74e334" href="https://www.instagram.com/elmomento.pk/" target="_blank" title="Instagram">
+						<span class="elementor-screen-only">Instagram</span>
+						<i class="fab fa-instagram"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-tripadvisor elementor-repeater-item-3aa279d" href="https://www.tripadvisor.com/Restaurant_Review-g295413-d25269512-Reviews-El_Momento-Lahore_Punjab_Province.html" target="_blank" title="Tripadvisor">
+						<span class="elementor-screen-only">Tripadvisor</span>
+						<i class="fab fa-tripadvisor"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-star elementor-repeater-item-a911c3f" href="https://www.trustpilot.com/review/elmomento.pk" target="_blank" rel="me" title="Trustpilot">
+						<span class="elementor-screen-only">Star</span>
+						<i class="fas fa-star"></i>					</a>
+				</span>
+					</div>
+				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-8173f55" data-id="8173f55" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d3bb7e4 elementor-widget elementor-widget-heading" data-id="d3bb7e4" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h4 class="elementor-heading-title elementor-size-default">Islamabad</h4>		</div>
+				</div>
+				<div class="elementor-element elementor-element-4a432e3 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="4a432e3" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-d71afd4 elementor-mobile-align-center elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="d71afd4" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="https://goo.gl/maps/LukUr3PFAciAysFD6">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-map-marker-alt"></i>						</span>
+										<span class="elementor-icon-list-text">Beverly Center, Jinnah Avenue,<br>F-6/1 Blue Area, Islamabad</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="tel:03111100317">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-phone-alt"></i>						</span>
+										<span class="elementor-icon-list-text">0311 1100317</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="mailto:info@elmoment.pk">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="fas fa-at"></i>						</span>
+										<span class="elementor-icon-list-text">info@elmomento.pk</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-9ec2b4e elementor-widget elementor-widget-heading" data-id="9ec2b4e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<span class="elementor-heading-title elementor-size-default">Monday - Sunday</span>		</div>
+				</div>
+				<div class="elementor-element elementor-element-619c398 elementor-widget elementor-widget-heading" data-id="619c398" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<span class="elementor-heading-title elementor-size-default">12:00 pm - 12:00 am</span>		</div>
+				</div>
+				<div class="elementor-element elementor-element-b0e72c1 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="b0e72c1" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-dde2a33 elementor-shape-circle e-grid-align-left e-grid-align-mobile-center elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="dde2a33" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-social-icons-wrapper elementor-grid">
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-repeater-item-125b40d" href="https://www.facebook.com/Elmomento.pk" target="_blank" title="Facebook">
+						<span class="elementor-screen-only">Facebook</span>
+						<i class="fab fa-facebook"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-tiktok elementor-repeater-item-a0b4403" href="https://www.tiktok.com/@elmomento.pk?_t=8YWRu9bzuYT&#038;_r=1" target="_blank" title="Tiktok">
+						<span class="elementor-screen-only">Tiktok</span>
+						<i class="fab fa-tiktok"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-repeater-item-26237b2" href="https://www.youtube.com/channel/UCoKC-5snZQxxvjKNjTiOJXg" target="_blank" title="Youtube">
+						<span class="elementor-screen-only">Youtube</span>
+						<i class="fab fa-youtube"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-e74e334" href="https://www.instagram.com/elmomento.isb/" target="_blank" title="Instagram">
+						<span class="elementor-screen-only">Instagram</span>
+						<i class="fab fa-instagram"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-tripadvisor elementor-repeater-item-3aa279d" href="https://www.tripadvisor.com/Restaurant_Review-g293960-d26162243-Reviews-El_Momento_Islamabad-Islamabad_Islamabad_Capital_Territory.html" target="_blank" title="Tripadvisor">
+						<span class="elementor-screen-only">Tripadvisor</span>
+						<i class="fab fa-tripadvisor"></i>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-star elementor-repeater-item-a911c3f" href="https://islamabad.infoisinfo.com.pk/card/el-momento-islamabad/152688" target="_blank" rel="me" title="Trustpilot">
+						<span class="elementor-screen-only">Star</span>
+						<i class="fas fa-star"></i>					</a>
+				</span>
+					</div>
+				</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-8dea3f6 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="8dea3f6" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1c919c2" data-id="1c919c2" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-a68e086 elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="a68e086" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-b50a6c1 elementor-widget elementor-widget-text-editor" data-id="b50a6c1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>Copyright © 2024. All rights reserved by <a href="https://instagram.com/teamtakhayul?igshid=YmMyMTA2M2Y="><span style="color: #ffffff;">Takhayul</span></a>.</p>						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+							</div>
+				</div>
+		
+
+<!-- GTM Container placement set to footer -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W36ZSS74" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><div id="wa"></div>		<div data-elementor-type="popup" data-elementor-id="17345" class="elementor elementor-17345 elementor-location-popup" data-elementor-settings="{&quot;triggers&quot;:{&quot;page_load_delay&quot;:2,&quot;page_load&quot;:&quot;yes&quot;},&quot;timing&quot;:[]}">
+					<div class="elementor-section-wrap">
+								<section class="elementor-section elementor-top-section elementor-element elementor-element-fe4cba4 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="fe4cba4" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c1f1863" data-id="c1f1863" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-8ddb8d3 elementor-widget__width-auto elementor-widget elementor-widget-heading" data-id="8ddb8d3" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h6 class="elementor-heading-title elementor-size-default">Discount Policy <br> Update</h6>		</div>
+				</div>
+				<div class="elementor-element elementor-element-8ea86dd elementor-widget elementor-widget-text-editor" data-id="8ea86dd" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+							<p>From today onwards, discounts will no longer be applicable on <em><strong>Mutton Beef &amp; Deal items</strong></em>. This change applies to all customers and transactions.</p>						</div>
+				</div>
+				<div class="elementor-element elementor-element-80ce8c6 animated-slow elementor-widget__width-auto elementor-absolute elementor-invisible elementor-widget elementor-widget-heading" data-id="80ce8c6" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;headShake&quot;,&quot;_position&quot;:&quot;absolute&quot;}" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">%</h2>		</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+							</div>
+				</div>
+		<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-regular-css' href='https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=1727267413' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animations-css' href='https://elmomento.pk/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.21.8' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/ht-mega-for-elementor/assets/js/slick.min.js?ver=2.5.4" id="slick-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/htmega-blocks/src/assets/js/script.js?ver=1727267409" id="htmega-block-main-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-browser-checker-js-after">
+/* <![CDATA[ */
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+/* ]]> */
+</script>
+<script type="text/javascript" id="rocket-preload-links-js-extra">
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/elmomento.pk","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rocket-preload-links-js-after">
+/* <![CDATA[ */
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-whatsapp/assets/dist/js/njt-whatsapp.js?ver=1727267409" id="nta-wa-libs-js" defer></script>
+<script type="text/javascript" id="nta-js-global-js-extra">
+/* <![CDATA[ */
+var njt_wa_global = {"ajax_url":"https:\/\/elmomento.pk\/wp-admin\/admin-ajax.php","nonce":"e61d147690","defaultAvatarSVG":"<svg width=\"48px\" height=\"48px\" class=\"nta-whatsapp-default-avatar\" version=\"1.1\" id=\"Layer_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\"\n            viewBox=\"0 0 512 512\" style=\"enable-background:new 0 0 512 512;\" xml:space=\"preserve\">\n            <path style=\"fill:#EDEDED;\" d=\"M0,512l35.31-128C12.359,344.276,0,300.138,0,254.234C0,114.759,114.759,0,255.117,0\n            S512,114.759,512,254.234S395.476,512,255.117,512c-44.138,0-86.51-14.124-124.469-35.31L0,512z\"\/>\n            <path style=\"fill:#55CD6C;\" d=\"M137.71,430.786l7.945,4.414c32.662,20.303,70.621,32.662,110.345,32.662\n            c115.641,0,211.862-96.221,211.862-213.628S371.641,44.138,255.117,44.138S44.138,137.71,44.138,254.234\n            c0,40.607,11.476,80.331,32.662,113.876l5.297,7.945l-20.303,74.152L137.71,430.786z\"\/>\n            <path style=\"fill:#FEFEFE;\" d=\"M187.145,135.945l-16.772-0.883c-5.297,0-10.593,1.766-14.124,5.297\n            c-7.945,7.062-21.186,20.303-24.717,37.959c-6.179,26.483,3.531,58.262,26.483,90.041s67.09,82.979,144.772,105.048\n            c24.717,7.062,44.138,2.648,60.028-7.062c12.359-7.945,20.303-20.303,22.952-33.545l2.648-12.359\n            c0.883-3.531-0.883-7.945-4.414-9.71l-55.614-25.6c-3.531-1.766-7.945-0.883-10.593,2.648l-22.069,28.248\n            c-1.766,1.766-4.414,2.648-7.062,1.766c-15.007-5.297-65.324-26.483-92.69-79.448c-0.883-2.648-0.883-5.297,0.883-7.062\n            l21.186-23.834c1.766-2.648,2.648-6.179,1.766-8.828l-25.6-57.379C193.324,138.593,190.676,135.945,187.145,135.945\"\/>\n        <\/svg>","defaultAvatarUrl":"https:\/\/elmomento.pk\/wp-content\/plugins\/wp-whatsapp\/assets\/img\/whatsapp_logo.svg","timezone":"+00:00","i18n":{"online":"Online","offline":"Offline"},"urlSettings":{"onDesktop":"api","onMobile":"api","openInNewTab":"ON"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-whatsapp/assets/js/whatsapp-button.js?ver=1727267409" id="nta-js-global-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/ht-mega-for-elementor/assets/js/popper.min.js?ver=2.5.4" id="htmega-popper-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/assets/js/htbbootstrap.js?ver=1727267409" id="htbbootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/ht-mega-for-elementor/assets/js/waypoints.js?ver=1727267409" id="waypoints-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/wp-cafe/assets/js/moment.min.js?ver=2.2.26" id="wpc-moment-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/wp-cafe/assets/js/flatpickr.min.js?ver=2.2.26" id="wpc-flatpicker-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/wp-cafe/assets/js/jquery.tmpl.min.js?ver=2.2.26" id="wpc-jquery-tmpl-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/wp-cafe/assets/js/jquery.timepicker.min.js?ver=2.2.26" id="wpc-jquery-timepicker-js" defer></script>
+<script type="text/javascript" id="wpc-public-js-extra">
+/* <![CDATA[ */
+var wpc_form_client_data = ["{\"settings\":{\"wpc_weekly_schedule\":[],\"wpc_weekly_schedule_start_time\":[],\"wpc_weekly_schedule_end_time\":[],\"wpc_all_day_start_time\":\"12:00 PM\",\"wpc_all_day_end_time\":\"12:00 AM\",\"wpc_holiday_date\":[],\"wpc_exception_date\":[],\"wpc_exception_start_time\":[],\"wpc_exception_end_time\":[],\"wpc_date_format\":\"F j, Y\",\"wpc_time_format\":\"g:i a\",\"wpc_early_bookings\":\"any_time\",\"wpc_early_bookings_value\":\"\",\"wpc_max_day\":\"\",\"wpc_late_bookings\":\"1\",\"wpc_pending_message\":\"Thank you for booking. Your booking is pending. Please check your email.\",\"wpc_booking_confirmed_message\":\"Thank you for booking. Your booking is confirmed. Please check your email.\",\"wpc_today\":\"2024-10-01\",\"reserv_form_local\":\"en\",\"reserve_dynamic_message\":\"\",\"reserv_time_interval\":\"30\",\"no_schedule_message\":\"No schedule is set from admin\",\"weekly_multi_diff_times\":[],\"multi_diff_weekly_schedule\":[],\"reser_multi_schedule\":\"\",\"multi_start_time\":[],\"multi_end_time\":[],\"multi_schedule_name\":[],\"multi_seat_capacity\":[],\"multi_time_excludes\":[],\"time_valid_message\":\"End time must be after start time\",\"day_valid_message\":\"Please select day first\",\"is_pro_active\":false},\"wpc_ajax_url\":\"https:\\\/\\\/elmomento.pk\\\/wp-admin\\\/admin-ajax.php\",\"wpc_validation_message\":{\"error_text\":\"Please fill the field\",\"email\":\"Email is not valid\",\"phone\":{\"phone_invalid\":\"Invalid phone number\",\"number_allowed\":\"Only number allowed\"},\"table_layout\":{\"empty\":\"Please choose available table\\\/chair for reservation\",\"min_invalid\":\"Minimum allowed guest is \",\"max_invalid\":\"Maximum allowed guest is \"}},\"wpc_form_dynamic_text\":{\"wpc_guest_count\":\"Select number of guests\",\"wpc_additional_information\":\"Additional Information:\"},\"_nonces\":{\"wpc_check_for_submission_nonce\":\"31ee0b5fa3\",\"filter_food_location_nonce\":\"4a92709e9e\",\"wpc_seat_capacity_nonce\":\"05029b9f01\"}}"];
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-cafe/assets/js/wpc-public.js?ver=1727267409" id="wpc-public-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-cafe/assets/js/common.js?ver=1727267409" id="wpc-common-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/libs/framework/assets/js/frontend-script.js?ver=1727267409" id="elementskit-framework-js-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="elementskit-framework-js-frontend-js-after">
+/* <![CDATA[ */
+		var elementskit = {
+			resturl: 'https://elmomento.pk/wp-json/elementskit/v1/',
+		}
+
+		
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/widget-scripts.js?ver=1727267409" id="ekit-widget-scripts-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/themes/deliciko/assets/js/bootstrap.min.js?ver=2.0.2" id="bootstrap-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/themes/deliciko/assets/js/popper.min.js?ver=2.0.2" id="popper-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/ht-mega-for-elementor/assets/js/jquery.magnific-popup.min.js?ver=2.5.4" id="magnific-popup-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/themes/deliciko/assets/js/instafeed.min.js?ver=2.0.2" id="instafeed-js-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/themes/deliciko/assets/js/owl.carousel.min.js?ver=2.0.2" id="owl-carousel-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/themes/deliciko/assets/js/jquery.easypiechart.min.js?ver=2.0.2" id="jquery-easypiechart-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/themes/deliciko/assets/js/script.js?ver=1727267409" id="deliciko-script-js" defer></script>
+<script type="text/javascript" id="eael-general-js-extra">
+/* <![CDATA[ */
+var localize = {"ajaxurl":"https:\/\/elmomento.pk\/wp-admin\/admin-ajax.php","nonce":"0bb2ec378f","i18n":{"added":"Added ","compare":"Compare","loading":"Loading..."},"eael_translate_text":{"required_text":"is a required field","invalid_text":"Invalid","billing_text":"Billing","shipping_text":"Shipping","fg_mfp_counter_text":"of"},"page_permalink":"https:\/\/elmomento.pk\/best-restaurants-in-lahore-for-family\/","cart_redirectition":"no","cart_page_url":"","el_breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/essential-addons-for-elementor-lite/assets/front-end/js/view/general.min.js?ver=5.9.23" id="eael-general-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-js/fontawesome-all.min.js?ver=4.10.33" id="pa-fontawesome-all-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-js/TweenMax.min.js?ver=4.10.33" id="pa-tweenmax-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2" id="elementor-waypoints-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-js/motionpath.min.js?ver=4.10.33" id="pa-motionpath-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-js/lottie.min.js?ver=4.10.33" id="lottie-js-js" defer></script>
+<script type="text/javascript" id="premium-addons-js-extra">
+/* <![CDATA[ */
+var PremiumSettings = {"ajaxurl":"https:\/\/elmomento.pk\/wp-admin\/admin-ajax.php","nonce":"826e6a9896"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/premium-addons-for-elementor/assets/frontend/min-js/premium-addons.min.js?ver=4.10.33" id="premium-addons-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.21.8" id="elementor-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.21.8" id="elementor-frontend-modules-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="elementor-frontend-js-before">
+/* <![CDATA[ */
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselWrapperAriaLabel":"Carousel | Horizontal scrolling: Arrow Left & Right","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},
+"version":"3.21.8","is_static":false,"experimentalFeatures":{"e_optimized_assets_loading":true,"additional_custom_breakpoints":true,"e_swiper_latest":true,"container_grid":true,"theme_builder_v2":true,"home_screen":true,"ai-layout":true,"landing-pages":true,"page-transitions":true,"notes":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/elmomento.pk\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":15544,"title":"10%20BEST%20Restaurants%20in%20Lahore%20for%20Family","excerpt":"","featuredImage":"https:\/\/elmomento.pk\/wp-content\/uploads\/2023\/09\/family-restaurant-lahore.jpg"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.21.8" id="elementor-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/bdthemes-prime-slider-lite/assets/vendor/js/goodshare.min.js?ver=3.14.8" id="goodshare-js" defer></script>
+<script type="text/javascript" id="nta-js-popup-js-extra">
+/* <![CDATA[ */
+var njt_wa = {"gdprStatus":"","accounts":[{"accountId":10123,"accountName":"El Momento Lahore","avatar":"","number":"+923111100315","title":"Chat With Us","predefinedText":"Hi","willBeBackText":"I will be back in [njwa_time_work]","dayOffsText":"I will be back soon","isAlwaysAvailable":"ON","daysOfWeekWorking":{"sunday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"monday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"tuesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"wednesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"thursday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"friday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"saturday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]}}},{"accountId":14293,"accountName":"El Momento Islamabad","avatar":"","number":"+923111100317","title":"Chat With Us","predefinedText":"Hi","willBeBackText":"I will be back in [njwa_time_work]","dayOffsText":"I will be back soon","isAlwaysAvailable":"ON","daysOfWeekWorking":{"sunday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"monday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"tuesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"wednesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"thursday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"friday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"saturday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]}}}],"options":{"display":{"displayCondition":"showAllPage","includePages":[],"excludePages":[],"includePosts":[],"showOnDesktop":"ON","showOnMobile":"ON","time_symbols":"h:m"},"styles":{"title":"Start a Conversation","responseText":"The team typically replies in a few minutes.","description":"Hi! Click one of our member below to chat on <strong>WhatsApp<\/strong>","backgroundColor":"#2db742","textColor":"#fff","titleSize":18,"accountNameSize":14,"descriptionTextSize":12,"regularTextSize":11,"scrollHeight":"500","isShowScroll":"OFF","isShowResponseText":"OFF","isShowPoweredBy":"ON","btnLabel":"Need Help? <strong>Chat with us<\/strong>","btnLabelWidth":"156","btnPosition":"right","btnLeftDistance":"30","btnRightDistance":"30","btnBottomDistance":"30","isShowBtnLabel":"ON","isShowGDPR":"OFF","gdprContent":"Please accept our <a href=\"https:\/\/ninjateam.org\/privacy-policy\/\">privacy policy<\/a> first to start a conversation."},"analytics":{"enabledGoogle":"OFF","enabledFacebook":"OFF","enabledGoogleGA4":"OFF"}}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-whatsapp/assets/js/whatsapp-popup.js?ver=1727267409" id="nta-js-popup-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/bdthemes-prime-slider-lite/assets/js/bdt-uikit.min.js?ver=3.17.0" id="bdt-uikit-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/bdthemes-prime-slider-lite/assets/js/prime-slider-site.min.js?ver=3.14.8" id="prime-slider-site-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.7.7" id="elementor-pro-webpack-runtime-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-includes/js/dist/hooks.min.js?ver=2810c76e705dd1a53b18" id="wp-hooks-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="elementor-pro-frontend-js-before">
+/* <![CDATA[ */
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/elmomento.pk\/wp-admin\/admin-ajax.php","nonce":"3d13b98dc3","urls":{"assets":"https:\/\/elmomento.pk\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/elmomento.pk\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},
+"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/elmomento.pk\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.7.7" id="elementor-pro-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.7.7" id="pro-elements-handlers-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/wp-cafe/assets/js/elementor.js?ver=1727267409" id="wpc-elementor-frontend-js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/themes/deliciko/assets/js/elementor.js?ver=1727267409" id="deliciko-main-elementor-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementskit-lite/widgets/init/assets/js/animate-circle.min.js?ver=3.1.4" id="animate-circle-js" defer></script>
+<script type="text/javascript" id="elementskit-elementor-js-extra">
+/* <![CDATA[ */
+var ekit_config = {"ajaxurl":"https:\/\/elmomento.pk\/wp-admin\/admin-ajax.php","nonce":"ee1ebefc42"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/cache/min/1/wp-content/plugins/elementskit-lite/widgets/init/assets/js/elementor.js?ver=1727267409" id="elementskit-elementor-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.7.7" id="e-sticky-js" defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-includes/js/underscore.min.js?ver=1.13.4" id="underscore-js" defer></script>
+<script type="text/javascript" id="wp-util-js-extra">
+/* <![CDATA[ */
+var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-includes/js/wp-util.min.js?ver=6.6.2" id="wp-util-js" defer></script>
+<script type="text/javascript" id="wpforms-elementor-js-extra">
+/* <![CDATA[ */
+var wpformsElementorVars = {"captcha_provider":"recaptcha","recaptcha_type":"v2"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://elmomento.pk/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.8.8.3" id="wpforms-elementor-js" defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://elmomento.pk/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img loading="lazy" src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script>
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1727763953 -->

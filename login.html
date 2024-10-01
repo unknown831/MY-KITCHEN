@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Login</title>
+    <style>
+        /* General styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f0e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Card design for login forms */
+        .login-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            width: 350px;
+            text-align: center;
+        }
+
+        .login-card h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .input-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .login-card input[type="text"],
+        .login-card input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Eye icon styling */
+        .toggle-password {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .login-card input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #8b4513;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .login-card input[type="submit"]:hover {
+            background-color: #a56722;
+        }
+
+        .login-card a {
+            display: block;
+            margin-top: 10px;
+            color: #8b4513;
+            text-decoration: none;
+        }
+
+        .login-card a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive layout for small screens */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .login-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Owner Login -->
+        <div class="login-card">
+            <h2>Owner Login</h2>
+            <form action="owner_dashboard.html" method="post">
+                <input type="text" name="owner_username" placeholder="Username" required>
+
+                <!-- Password input with eye icon -->
+                <div class="input-container">
+                    <input type="password" name="owner_password" id="owner_password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword('owner_password')">&#128065;</span> <!-- Eye Icon -->
+                </div>
+
+                <input type="submit" value="Login">
+            </form>
+            <a href="#">Forgot Password?</a>
+        </div>
+
+        <!-- Staff Login -->
+        <div class="login-card">
+            <h2>Staff Login</h2>
+            <form action="staff_dashboard.html" method="post">
+                <input type="text" name="staff_username" placeholder="Username" required>
+
+                <!-- Password input with eye icon -->
+                <div class="input-container">
+                    <input type="password" name="staff_password" id="staff_password" placeholder="Password" required>
+                    <span class="toggle-password" onclick="togglePassword('staff_password')">&#128065;</span> <!-- Eye Icon -->
+                </div>
+
+                <input type="submit" value="Login">
+            </form>
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+
+    <!-- JavaScript to toggle password visibility -->
+    <script>
+        function togglePassword(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+        }
+    </script>
+
+</body>
+</html>
