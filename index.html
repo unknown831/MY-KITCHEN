@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abubakr's Kitchens</title>
+    <link rel="shortcut icon"type="x-icon" href="logo1.png">
+    <style>
+        /* General body styling */
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f0e1; /* Warm beige color */
+            color: #333;
+        }
+
+        /* Header styling */
+        header {
+            background-color: #8b4513; /* Dark brown */
+            padding: 5px 5px;
+            margin: 5px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 4px 8px black;
+            border-radius: 25px;
+
+        }
+
+        /* Logo styling */
+        .logo img {
+            width: 120px;
+            height: auto;
+        }
+
+        #logo img:hover {
+            background-color: rgb(70, 207, 131);
+            cursor: pointer;
+        }
+
+        /* Navigation menu */
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            margin-right: 20px;
+        }
+
+        ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+        }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main section styling */
+        main {
+            position: relative;
+            text-align: center;
+            background-color: #f0e6d6; /* Light beige background */
+            border: 2px solid #8b4513; /* Dark brown border for classic look */
+            margin: 20px auto;
+            max-width: 1200px; /* Limit the width of the content */
+            border-radius: 8px;
+            box-shadow: 0px 8px 15px rgba(217, 149, 149, 0.1);
+            padding: 0;
+        }
+
+        /* Image styling */
+        main img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Centered content (heading and input) */
+        .centered-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #8b4513; /* Dark brown for text */
+        }
+
+        .centered-content p {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', serif;
+            color: whitesmoke;
+        }
+
+        /* Input field */
+        .centered-content input[type="text"] {
+            width: 350px;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #8b4513; /* Dark brown border */
+            border-radius: 5px;
+            outline: none;
+            background-color: #fff6e5; /* Cream color */
+            font-family: 'Georgia', serif;
+            color: whitesmoke;
+        }
+
+        .centered-content input[type="text"]:focus {
+            border-color: #c2a384; /* Lighter brown when focused */
+            background-color: #b38f51;
+        }
+
+        /* Dishes description styling */
+        .dishes-description {
+            padding: 20px;
+            text-align: left;
+            font-size: 18px;
+            max-width: 1200px;
+            margin: 20px auto;
+            color: #8b4513; /* Dark brown */
+        }
+
+        .dishes-description h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* Containers for dishes with a 3x3 grid layout */
+        .dishes-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .dish-card {
+            background-color: #fff6e5;
+            border: 2px solid #8b4513;
+            border-radius: 8px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dish-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            height: 180px;
+        }
+
+        .order-button {
+            background-color: #8b4513;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .order-button:hover {
+            background-color: #a56722; /* Lighter brown on hover */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #8b4513; /* Dark brown */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            width: 100%;
+            font-size: 14px;
+            font-family: 'Georgia', serif;
+        }
+        .logo{
+            padding: 0px 41px;
+           
+            color: white;
+        }
+        .logo:hover{
+            cursor: pointer;
+            color: rgb(211, 88, 88);
+        }
+        #logo a{
+           color: whitesmoke;
+           text-decoration: none;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="zomato.php">
+    <header>
+        <div class="logo">
+            <h2 id="logo"><a href="index.html" target="_blank">Zomatao</a></h2>
+        </div>
+        <ul>
+            <li><a href="investor.html">Investor Relations</a></li>
+            <li><a href="resturatn.html">Add Restaurant</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="SIGNUP.HTML">Sign up</a></li>
+            <li><a href="contact.html">Contact Us</a></li> <!-- Link to Contact Us page -->
+        </ul>
+    </header>
+
+    <main>
+        <!-- Background image -->
+        <img src="background.png" alt="Restaurant Background">
+
+        <!-- Centered content (heading and input) -->
+        <div class="centered-content">
+            <p>Discover the best food & drinks in Amritsar</p>
+            <input type="text" placeholder="Search for restaurant, cuisine or a dish">
+        </div>
+    </main>
+
+    <!-- Dishes description -->
+    <section class="dishes-description">
+        <h3>Our Best Dishes</h3>
+        <p>At Abubakr's Kitchens, we bring you the best of traditional and modern cuisine, using the freshest ingredients. Explore some of our signature dishes below:</p>
+    </section>
+
+    <!-- Dishes containers in a 3x3 grid -->
+    <section class="dishes-container">
+        <!-- Dish 1 -->
+        <div class="dish-card">
+            <img src="biryani .jpg" alt="Dish 1">
+            <h4>Chicken Biryani</h4>
+            <p>Aromatic basmati rice cooked with tender chicken, flavored with rich spices.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+
+        <!-- Dish 2 -->
+        <div class="dish-card">
+            <img src="butter.jpg" alt="Dish 2">
+            <h4>Paneer Butter Masala</h4>
+            <p>Creamy tomato-based gravy with soft paneer cubes, a vegetarian delight.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+
+        <!-- Dish 3 -->
+        <div class="dish-card">
+            <img src="butternan.jpg" alt="Dish 3">
+            <h4>Butter Naan</h4>
+            <p>Soft and fluffy naan brushed with melted butter, the perfect accompaniment.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+
+        <!-- Dish 4 -->
+        <div class="dish-card">
+            <img src="biryani .jpg" alt="Dish 4">
+            <h4>Chicken Biryani</h4>
+            <p>Aromatic basmati rice cooked with tender chicken, flavored with rich spices.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+
+        <!-- Dish 5 -->
+        <div class="dish-card">
+            <img src="butter.jpg" alt="Dish 5">
+            <h4>Paneer Butter Masala</h4>
+            <p>Creamy tomato-based gravy with soft paneer cubes, a vegetarian delight.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+
+        <!-- Dish 6 -->
+        <div class="dish-card">
+            <img src="butternan.jpg" alt="Dish 6">
+            <h4>Butter Naan</h4>
+            <p>Soft and fluffy naan brushed with melted butter, the perfect accompaniment.</p>
+            <button class="order-button">Order Now</button>
+        </div>
+        
+        <!-- Add more dishes here if needed -->
+    </section>
+
+    <footer>
+        Copyright &copy; All rights reserved
+    </footer>
+</form>
+</body>
+</html>
